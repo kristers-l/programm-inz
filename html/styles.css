@@ -99,6 +99,11 @@ section{
 	left: 0;
 	background-color: var(--purple-transparent);
 	z-index: 999;
+	transition: background-color .5s, height .5s;
+}
+
+.header.active{
+	background-color: var(--purple-solid);
 }
 /*Header styles - navigation*/
 .nav{
@@ -211,13 +216,13 @@ section{
 	font-weight: 300;
 	font-family: 'Courgette', cursive;
 }
-/*Booking section*/
+/*Booking section styles*/
 .booking{
 	background-image: var(--gradient-color);
 }
 
 .input-group{
-	margin-bottom: 1.5rem;
+	margin-bottom: 1rem;
 }
 
 .input-label{
@@ -469,3 +474,259 @@ section{
 	background-color: var(--purple-solid);
 	color: #fff;
 }
+
+.footer-content-brand{
+	margin-bottom: 5rem;
+}
+
+.footer .paragraph{
+	color: inherit;
+}
+
+.footer-heading{
+	text-transform: uppercase;
+	margin-bottom: 2.5rem;
+}
+
+.social-media{
+	display: flex;
+}
+
+.sm-link{
+	width: 4rem;
+	height: 4rem;
+	font-size: 2rem;
+	border: 2px solid var(--yellow-solid);
+	border-radius: 50%;
+	display: flex;
+	margin-right: 1rem;
+	transition: background-color .5s;
+}
+
+.sm-link:hover{
+	background-color: var(--yellow-solid);
+	color: var(--dark-color);
+}
+
+.sm-link i{
+	margin: auto;
+}
+
+/*Media queries*/
+@media screen and (min-width: 768px){
+	/*Header section styles*/
+	.header{
+		height: 10rem;
+	}
+	header.active{
+		height: 6rem;
+	}
+	/*Hero section styles*/
+	.title{
+		font-size: 8rem;
+	}
+	/*Contact section styles*/
+	.contact-content{
+		justify-content: space-between;
+	}
+	.traveler-wrap{
+		display: block;
+		flex: 0 0 45%;
+	}
+	.traveler-wramp img{
+		width: 100%;
+	}
+	.container-form{
+		flex: 0 0 50;
+		align-self: flex-start;
+	}
+	.input-group-wrap{
+		display: flex;
+	}
+	.input-group-wrap .input-group{
+		width: 50%;
+		margin-right: 2rem;
+	}
+	.input-group-wrap .input-group:last-child{
+		margin-right: 0;
+	}
+	/*Footer section styles*/
+	.footer{
+		overflow-x: hidden;
+	}
+	.footer-content{
+		display: flex;
+	}
+	.footer-content-brand{
+		margin-bottom: 0;
+		flex: 0 0 60%;
+	}
+	.footer .paragraph{
+		margin-top: 2.5rem;
+	}
+	.footer-heading{
+		margin-bottom: 5rem;
+	}
+	.social-media-wrap{
+		flex: 0 0 40%;
+		margin-left: 2.5rem;
+	}
+}
+
+@media screen and (min-width: 1000px){
+	section:not(.booking){
+		padding: 10rem 0;
+	}
+	/*Header section styles*/
+	.hamburger-menu{
+	display: none;
+	}
+	.nav-list{
+		position: initial;
+		width: initial;
+		height: initial;
+		background-color: transparent;
+		flex-direction: row;
+		justify-content: initial;
+		opacity: 1;
+		transform: scale(1);
+	}
+	.nav-item:not(:last-child){
+		margin-right: 3rem;
+		margin-bottom: 0;
+	}
+	.nav-link{
+		font-size: 1.3rem;
+		font-weight: normal;
+		transition: color .5s;
+	}
+	.nav-link:hover{
+		color: var(--yellow-solid);
+	}
+	/*hero section styles*/
+	.title{
+		font-size: 12rem;
+	}
+	.sub-title{
+		font-size: 4.6rem;
+	}
+	/*Booking section styles*/
+	.book{
+		display: flex;
+		justify-content: space-between;
+	}
+	.book-form .input-group{
+		margin-bottom: 0;
+	}
+	.book-form .input-group:first-child{
+		flex: 0 0 20%;
+	}
+	.input,
+	.options{
+		min-width: 10rem;
+	}
+	/*Room section styles*/
+	.room-grid{
+		grid-template-columns: repeat(auto-fit, minimax(40rem, 1fr));
+		grid-gap: 8rem;
+	}
+	.featured-rooms{
+		flex-direction: row;
+		align-items: flex-start;
+	}
+	.room-info-wrap{
+		margin-left: 1.5rem;
+	}
+}
+@media screen and (min-width: 1200px){
+	.book-form .input-group:first-child{
+		flex: 0 0 30%;
+	}
+}
+/*Piedavajumi index*/
+.heropied{
+	width: 100%;
+	height: 125vh;
+	background: url("./images/hero_background.jpg") center no-repeat;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	position: relative;
+	z-index: 0;
+}
+
+.heropied::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	background-color: var(--purple-transparent-alt);
+	z-index: -1;
+}
+/*Logins*/
+.loginbox{
+	width: 320px;
+	height: 420px;
+	background: #fff;
+	color: #000;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+}
+
+.avatar{
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	position: absolute;
+	top: -50px;
+	left: calc(50% - 50px);
+}
+
+h1{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 22px;
+}
+
+.loginbox p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+.loginbox input{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #000;
+	background:transparent;
+	outline: none;
+	height: 40px;
+	color: #000;
+	font-size: 16px;
+}
+
+.loginbox input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	background: #fb2525;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+	}
+	
+/*Lietotaji*/
